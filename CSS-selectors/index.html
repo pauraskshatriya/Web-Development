@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Selectors Demo</title>
+
+    <style>
+        /* Universal Selector */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Element Selector */
+        div {
+            padding: 10px;
+            margin: 10px;
+        }
+
+        /* Class Selector */
+        .red {
+            background-color: red;
+            color: white;
+        }
+
+        /* ID Selector */
+        #green {
+            background-color: green;
+            color: white;
+        }
+
+        /* Child Selector (works now) */
+        div > p {
+            color: blue;
+            background-color: lightgray;
+        }
+
+        /* Descendant Selector */
+        div article p {
+            color: white;
+            background-color: brown;
+        }
+
+        /* Pseudo-classes for links */
+        a:link {
+            color: green;
+        }
+
+        a:visited {
+            color: purple;
+        }
+
+        a:hover {
+            background-color: yellow;
+        }
+
+        a:active {
+            background-color: red;
+        }
+
+        /* First-child pseudo selector */
+        p:first-child {
+            background-color: aqua;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- First-child example -->
+    <main>
+        <p>I am first</p>
+        <p>I am second</p>
+    </main>
+
+    <!-- Class selector + child selector -->
+    <div class="red">
+        <p>I am a direct child paragraph</p>
+
+        <article>
+            <p>I am a paragraph inside article</p>
+        </article>
+    </div>
+
+    <!-- ID selector -->
+    <div id="green">
+        I am another div
+    </div>
+
+    <!-- Link pseudo-classes -->
+    <a href="https://www.google.com">Go to Google</a><br>
+    <a href="https://www.facebook.com">Go to Facebook</a>
+
+</body>
+</html>
