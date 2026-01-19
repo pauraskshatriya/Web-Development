@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card Design</title>
+
+    <style>
+        /* Page styling */
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f2f2f2;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Card container */
+        .card {
+            width: 300px;
+            border-radius: 12px;
+            overflow: hidden;
+            background-color: #fff;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        /* Card image */
+        .card img {
+            width: 100%;
+            display: block;
+        }
+
+        /* Optional card content */
+        .card-content {
+            padding: 15px;
+        }
+
+        .card-content h3 {
+            margin: 0 0 8px;
+            font-size: 18px;
+        }
+
+        .card-content p {
+            margin: 0;
+            font-size: 14px;
+            color: #555;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Card -->
+    <div class="card">
+        <img src="card.png" alt="Card Image">
+        <div class="card-content">
+            <h3>Card Title</h3>
+            <p>This is a sample card layout.</p>
+        </div>
+    </div>
+
+</body>
+</html>
