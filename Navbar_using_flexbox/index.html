@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox Navbar</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Segoe UI", sans-serif;
+        }
+
+        header {
+            border-bottom: 1px solid #e5e5e5;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 40px;
+            height: 70px;
+        }
+
+        /* Logo */
+        .logo img {
+            width: 160px;
+            cursor: pointer;
+        }
+
+        /* Right menu */
+        .right ul {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+        }
+
+        .right ul li {
+            list-style: none;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            cursor: pointer;
+            font-size: 15px;
+            color: #222;
+        }
+
+        .right ul li svg {
+            width: 16px;
+            height: 16px;
+        }
+
+        .right ul li img {
+            width: 22px;
+        }
+
+        /* Hover effect */
+        .right ul li:hover {
+            color: #0078d4;
+        }
+
+        .right ul li:hover svg path {
+            stroke: #0078d4;
+        }
+    </style>
+</head>
+
+<body>
+<header>
+    <nav>
+        <div class="logo">
+            <img src="https://www.ultraedit.com/wp-content/uploads/2023/01/Dark-logo.png" alt="UltraEdit Logo">
+        </div>
+
+        <div class="right">
+            <ul>
+                <li>
+                    <span>Products</span>
+                    <svg viewBox="0 0 24 24" fill="none">
+                        <path d="M6 9L12 15L18 9" stroke="#141B34" stroke-width="1.5"
+                              stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </li>
+
+                <li>
+                    <span>Pricing</span>
+                    <svg viewBox="0 0 24 24" fill="none">
+                        <path d="M6 9L12 15L18 9" stroke="#141B34" stroke-width="1.5"
+                              stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </li>
+
+                <li>
+                    <span>Resources</span>
+                    <svg viewBox="0 0 24 24" fill="none">
+                        <path d="M6 9L12 15L18 9" stroke="#141B34" stroke-width="1.5"
+                              stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </li>
+
+                <li>
+                    <span>About Us</span>
+                    <svg viewBox="0 0 24 24" fill="none">
+                        <path d="M6 9L12 15L18 9" stroke="#141B34" stroke-width="1.5"
+                              stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </li>
+
+                <li>
+                    <img src="https://www.ultraedit.com/wp-content/themes/Divi_Child/img/Lang.png"
+                         alt="Language">
+                </li>
+            </ul>
+        </div>
+    </nav>
+</header>
+</body>
+</html>
