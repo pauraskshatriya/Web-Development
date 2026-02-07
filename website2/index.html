@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Underrated CSS Demo</title>
+
+<style>
+
+:where(body, h1, h2, p, button) {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+}
+
+section {
+  content-visibility: auto;
+  padding: 2rem;
+  border-bottom: 1px solid #ddd;
+}
+
+section {
+  scroll-margin-top: 80px;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  background: #111;
+  color: white;
+  padding: 1rem;
+  z-index: 10;
+}
+
+h1 {
+  text-wrap: balance;
+  font-size: 2.2rem;
+}
+
+.card {
+  padding: 1rem;
+  border: 2px dashed #aaa;
+  margin-top: 1rem;
+}
+
+.card:has(img) {
+  border-color: hotpink;
+}
+
+.pixel-art {
+  image-rendering: pixelated;
+  width: 100px;
+}
+
+input[type="checkbox"] {
+  accent-color: teal;
+}
+
+input[type="text"] {
+  caret-color: crimson;
+  padding: 0.5rem;
+}
+
+.blend-wrapper {
+  isolation: isolate;
+  background: url("https://picsum.photos/600/200") center/cover;
+  padding: 3rem;
+}
+
+.blend-text {
+  color: white;
+  font-size: 3rem;
+  mix-blend-mode: overlay;
+}
+
+.vertical {
+  writing-mode: vertical-rl;
+  border-left: 3px solid black;
+  padding-left: 1rem;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 0, 0, 0.2);
+  pointer-events: none;
+}
+
+select {
+  appearance: none;
+  padding: 0.5rem;
+  border: 2px solid black;
+}
+
+@property --angle {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
+}
+
+.spinner {
+  --angle: 0deg;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: conic-gradient(from var(--angle), hotpink, purple, cyan);
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    --angle: 360deg;
+  }
+}
+
+@media (hover: none) {
+  button:hover {
+    background: initial;
+  }
+}
+
+button {
+  padding: 0.6rem 1rem;
+  background: black;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  Sticky Header —
+  <a href="#features" style="color: cyan;">Jump to features</a>
+</header>
+
+<section>
+  <h1>Balanced headings look better without manual line breaks</h1>
+  <p>This heading uses <code>text-wrap: balance</code>.</p>
+</section>
+
+<section id="features">
+  <h2>:has() Parent Selector</h2>
+  <div class="card">
+    No image here → normal border
+  </div>
+  <div class="card">
+    <img class="pixel-art" src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Pixel_art_smiley.png" />
+    Card with image → hotpink border
+  </div>
+</section>
+
+<section>
+  <h2>Forms (accent-color, caret-color, appearance)</h2>
+  <label>
+    <input type="checkbox" /> Fancy checkbox
+  </label>
+  <br /><br />
+  <input type="text" placeholder="Crimson caret 👀" />
+  <br /><br />
+  <select>
+    <option>Custom select</option>
+    <option>No JS needed</option>
+  </select>
+</section>
+
+<section>
+  <h2>Blend Modes</h2>
+  <div class="blend-wrapper">
+    <div class="blend-text">BLENDED TEXT</div>
+  </div>
+</section>
+
+<section>
+  <h2>Vertical Writing Mode</h2>
+  <p class="vertical">Vertical text layout</p>
+</section>
+
+<section style="position: relative;">
+  <h2>Pointer Events None</h2>
+  <button onclick="alert('Clicked!')">Click me</button>
+  <div class="overlay"></div>
+</section>
+
+<section>
+  <h2>@property Animation</h2>
+  <div class="spinner"></div>
+</section>
+
+</body>
+</html>
