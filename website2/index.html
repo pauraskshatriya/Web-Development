@@ -3,94 +3,109 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Underrated CSS Demo</title>
+<title>Underrated CSS Demo (Refined)</title>
 
 <style>
-
+/* Modern Reset */
 :where(body, h1, h2, p, button) {
   margin: 0;
-  font-family: system-ui, sans-serif;
+  font-family: system-ui, -apple-system, sans-serif;
+  line-height: 1.5;
+}
+
+body {
+  background-color: #fcfcfc;
+  color: #333;
 }
 
 section {
   content-visibility: auto;
-  padding: 2rem;
-  border-bottom: 1px solid #ddd;
-}
-
-section {
-  scroll-margin-top: 80px;
+  padding: 3rem 2rem;
+  border-bottom: 1px solid #eee;
+  scroll-margin-top: 70px; /* Aligns with sticky header */
 }
 
 header {
   position: sticky;
   top: 0;
-  background: #111;
+  background: rgba(17, 17, 17, 0.9);
+  backdrop-filter: blur(8px); /* Subtle modern touch */
   color: white;
-  padding: 1rem;
+  padding: 1rem 2rem;
   z-index: 10;
+  display: flex;
+  justify-content: space-between;
 }
 
 h1 {
   text-wrap: balance;
-  font-size: 2.2rem;
+  font-size: 2.5rem;
+  letter-spacing: -0.02em;
+}
+
+p {
+  text-wrap: pretty; /* Prevents single-word orphans */
+  max-width: 60ch;   /* Ideal reading length */
+  color: #555;
 }
 
 .card {
-  padding: 1rem;
-  border: 2px dashed #aaa;
-  margin-top: 1rem;
+  padding: 1.5rem;
+  border: 2px dashed #ccc;
+  margin-block-start: 1.5rem; /* Logical property */
+  border-radius: 8px;
+  transition: border-color 0.3s ease;
 }
 
+/* The Magic :has() selector */
 .card:has(img) {
   border-color: hotpink;
+  background: #fff0f6;
 }
 
 .pixel-art {
   image-rendering: pixelated;
-  width: 100px;
+  width: 64px;
+  display: block;
+  margin-block-end: 1rem;
 }
 
+/* Form Styling */
 input[type="checkbox"] {
   accent-color: teal;
+  scale: 1.2;
 }
 
 input[type="text"] {
   caret-color: crimson;
-  padding: 0.5rem;
+  padding: 0.6rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
 }
 
 .blend-wrapper {
   isolation: isolate;
-  background: url("https://picsum.photos/600/200") center/cover;
-  padding: 3rem;
+  background: url("https://picsum.photos/800/300") center/cover;
+  padding: 4rem 2rem;
+  border-radius: 12px;
+  margin-block-start: 1rem;
 }
 
 .blend-text {
   color: white;
-  font-size: 3rem;
+  font-size: clamp(2rem, 8vw, 4rem); /* Responsive size */
+  font-weight: 900;
   mix-blend-mode: overlay;
 }
 
 .vertical {
   writing-mode: vertical-rl;
-  border-left: 3px solid black;
-  padding-left: 1rem;
+  border-inline-start: 3px solid #111;
+  padding-inline-start: 1rem;
+  height: 150px;
 }
 
-.overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(255, 0, 0, 0.2);
-  pointer-events: none;
-}
-
-select {
-  appearance: none;
-  padding: 0.5rem;
-  border: 2px solid black;
-}
-
+/* @property for smooth variable transitions */
 @property --angle {
   syntax: "<angle>";
   inherits: false;
@@ -98,32 +113,29 @@ select {
 }
 
 .spinner {
-  --angle: 0deg;
   width: 80px;
-  height: 80px;
+  aspect-ratio: 1;
   border-radius: 50%;
-  background: conic-gradient(from var(--angle), hotpink, purple, cyan);
-  animation: spin 2s linear infinite;
+  background: conic-gradient(from var(--angle), #00fff2, #7d2ae8, #ff00c1);
+  animation: spin 3s linear infinite;
 }
 
 @keyframes spin {
-  to {
-    --angle: 360deg;
-  }
-}
-
-@media (hover: none) {
-  button:hover {
-    background: initial;
-  }
+  to { --angle: 360deg; }
 }
 
 button {
-  padding: 0.6rem 1rem;
-  background: black;
+  padding: 0.75rem 1.5rem;
+  background: #111;
   color: white;
   border: none;
+  border-radius: 4px;
   cursor: pointer;
+}
+
+button:hover {
+  /* color-mix creates a hover state without needing a new hex code */
+  background: color-mix(in srgb, #111, white 20%);
 }
 </style>
 </head>
@@ -131,61 +143,51 @@ button {
 <body>
 
 <header>
-  Sticky Header —
-  <a href="#features" style="color: cyan;">Jump to features</a>
+  <strong>CSS Showcase</strong>
+  <a href="#features" style="color: #00fff2; text-decoration: none;">View Features</a>
 </header>
 
 <section>
-  <h1>Balanced headings look better without manual line breaks</h1>
-  <p>This heading uses <code>text-wrap: balance</code>.</p>
+  <h1>Balanced headings prevent awkward typographic gaps</h1>
+  <p>Notice how this paragraph avoids having a single word on the last line thanks to <code>text-wrap: pretty</code>. It's subtle, but makes a huge difference in professional layouts.</p>
 </section>
 
 <section id="features">
-  <h2>:has() Parent Selector</h2>
+  <h2>The :has() selector</h2>
   <div class="card">
-    No image here → normal border
+    <p>This is a standard card with no image.</p>
   </div>
   <div class="card">
-    <img class="pixel-art" src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Pixel_art_smiley.png" />
-    Card with image → hotpink border
+    <img class="pixel-art" src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Pixel_art_smiley.png" alt="pixel smiley" />
+    <p>This card contains an image, so the parent <code>.card</code> changed its border and background automatically.</p>
   </div>
 </section>
 
 <section>
-  <h2>Forms (accent-color, caret-color, appearance)</h2>
-  <label>
-    <input type="checkbox" /> Fancy checkbox
-  </label>
-  <br /><br />
-  <input type="text" placeholder="Crimson caret 👀" />
-  <br /><br />
-  <select>
-    <option>Custom select</option>
-    <option>No JS needed</option>
-  </select>
+  <h2>Modern Form Controls</h2>
+  <div style="display: flex; flex-direction: column; gap: 1.5rem; align-items: flex-start;">
+    <label style="display: flex; align-items: center; gap: 0.5rem;">
+      <input type="checkbox" checked /> <code>accent-color</code>
+    </label>
+    <input type="text" placeholder="Look at the crimson caret..." />
+  </div>
 </section>
 
 <section>
-  <h2>Blend Modes</h2>
+  <h2>Visual Effects</h2>
   <div class="blend-wrapper">
-    <div class="blend-text">BLENDED TEXT</div>
+    <div class="blend-text">OVERLAY BLEND</div>
   </div>
-</section>
-
-<section>
-  <h2>Vertical Writing Mode</h2>
-  <p class="vertical">Vertical text layout</p>
-</section>
-
-<section style="position: relative;">
-  <h2>Pointer Events None</h2>
-  <button onclick="alert('Clicked!')">Click me</button>
-  <div class="overlay"></div>
-</section>
-
-<section>
-  <h2>@property Animation</h2>
-  <div class="spinner"></div>
+  <div style="margin-top: 2rem; display: flex; gap: 4rem; align-items: center;">
+    <div>
+      <h3>Writing Mode</h3>
+      <p class="vertical">Vertical Layouts</p>
+    </div>
+    <div>
+      <h3>Animated @property</h3>
+      <div class="spinner"></div>
+    </div>
+  </div>
 </section>
 
 </body>
