@@ -1,64 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>
-		HTML Form
-	</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
 </head>
 <body>
-	<h1 style="text-align: center;">
-		REGISTRATION FORM
-	</h1>
-	<form name="RegForm" method="post">
-		<p>
-			Name:
-			<input type="text" size="65" name="Name" />
-		</p>
-		<br />
-		<p> Gender: </p>
-		<input type="radio" id="male" name="gender" value="male">
-		<label for="male">Male</label>
-		<input type="radio" id="female" name="gender" value="female">
-		<label for="female">Female</label>
-		<p>
-			Address:
-			<input type="text" size="65" name="Address" />
-		</p>
-		<br />
-		<p>
-			E-mail Address:
-			<input type="text" size="65" name="EMail" />
-		</p>
-		<br />
-		<p>
-			Password:
-			<input type="text" size="65" name="Password" />
-		</p>
-		<br />
-		<p>
-			Telephone:
-			<input type="text" size="65" name="Telephone" />
-		</p>
-		<br />
-		<p>
-			SELECT YOUR COURSE
-			<select type="text" value="" name="Subject">
-				<option>BTECH</option>
-				<option>BBA</option>
-				<option>BCA</option>
-				<option>B.COM</option>
-			</select>
-		</p>
-		<br />
-		<br />
-		<p>
-			Comments:
-			<textarea cols="55" name="Comment"> </textarea>
-		</p>
-		<p>
-			<input type="submit" value="send" name="Submit" />
-			<input type="reset" value="Reset" name="Reset" />
-		</p>
-	</form>
+
+    <h1 style="text-align: center;">REGISTRATION FORM</h1>
+
+    <form name="RegForm" method="post">
+
+        <p>
+            <label for="name">Name:</label><br>
+            <input type="text" id="name" name="Name" size="65" required>
+        </p>
+
+        <p>
+            Gender:<br>
+            <input type="radio" id="male" name="gender" value="male" required>
+            <label for="male">Male</label>
+
+            <input type="radio" id="female" name="gender" value="female">
+            <label for="female">Female</label>
+        </p>
+
+        <p>
+            <label for="address">Address:</label><br>
+            <input type="text" id="address" name="Address" size="65" required>
+        </p>
+
+        <p>
+            <label for="email">E-mail Address:</label><br>
+            <input type="email" id="email" name="EMail" size="65" required>
+        </p>
+
+        <p>
+            <label for="password">Password:</label><br>
+            <input type="password" id="password" name="Password" size="65" required>
+        </p>
+
+        <p>
+            <label for="phone">Telephone:</label><br>
+            <input type="tel" id="phone" name="Telephone" size="65">
+        </p>
+
+        <p>
+            <label for="course">Select Your Course:</label><br>
+            <select id="course" name="Subject" required>
+                <option value="">--Select--</option>
+                <option value="BTECH">BTECH</option>
+                <option value="BBA">BBA</option>
+                <option value="BCA">BCA</option>
+                <option value="BCOM">B.COM</option>
+            </select>
+        </p>
+
+        <p>
+            <label for="comment">Comments:</label><br>
+            <textarea id="comment" name="Comment" cols="55" rows="4"></textarea>
+        </p>
+
+        <p>
+            <input type="submit" value="Send" name="Submit">
+            <input type="reset" value="Reset" name="Reset">
+        </p>
+
+    </form>
+
 </body>
 </html>
