@@ -5,19 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registration Form</title>
 </head>
+
 <body>
 
-    <h1 style="text-align: center;">REGISTRATION FORM</h1>
+    <h1 style="text-align:center;">REGISTRATION FORM</h1>
+    <hr>
 
     <form name="RegForm" method="post">
 
         <p>
-            <label for="name">Name:</label><br>
-            <input type="text" id="name" name="Name" size="65" required>
+            <label for="name"><b>Name:</b></label><br>
+            <input type="text" id="name" name="Name" size="65" placeholder="Enter your name" required>
         </p>
 
         <p>
-            Gender:<br>
+            <b>Gender:</b><br>
             <input type="radio" id="male" name="gender" value="male" required>
             <label for="male">Male</label>
 
@@ -26,29 +28,29 @@
         </p>
 
         <p>
-            <label for="address">Address:</label><br>
-            <input type="text" id="address" name="Address" size="65" required>
+            <label for="address"><b>Address:</b></label><br>
+            <input type="text" id="address" name="Address" size="65" placeholder="Enter your address" required>
         </p>
 
         <p>
-            <label for="email">E-mail Address:</label><br>
-            <input type="email" id="email" name="EMail" size="65" required>
+            <label for="email"><b>E-mail Address:</b></label><br>
+            <input type="email" id="email" name="EMail" size="65" placeholder="example@email.com" required>
         </p>
 
         <p>
-            <label for="password">Password:</label><br>
+            <label for="password"><b>Password:</b></label><br>
             <input type="password" id="password" name="Password" size="65" required>
         </p>
 
         <p>
-            <label for="phone">Telephone:</label><br>
-            <input type="tel" id="phone" name="Telephone" size="65">
+            <label for="phone"><b>Telephone:</b></label><br>
+            <input type="tel" id="phone" name="Telephone" size="65" placeholder="Enter phone number">
         </p>
 
         <p>
-            <label for="course">Select Your Course:</label><br>
+            <label for="course"><b>Select Your Course:</b></label><br>
             <select id="course" name="Subject" required>
-                <option value="">--Select--</option>
+                <option value="">--Select Course--</option>
                 <option value="BTECH">BTECH</option>
                 <option value="BBA">BBA</option>
                 <option value="BCA">BCA</option>
@@ -57,13 +59,13 @@
         </p>
 
         <p>
-            <label for="comment">Comments:</label><br>
-            <textarea id="comment" name="Comment" cols="55" rows="4"></textarea>
+            <label for="comment"><b>Comments:</b></label><br>
+            <textarea id="comment" name="Comment" cols="55" rows="4" placeholder="Enter your comments"></textarea>
         </p>
 
         <p>
-            <input type="submit" value="Send" name="Submit">
-            <input type="reset" value="Reset" name="Reset">
+            <input type="submit" value="Submit">
+            <input type="reset" value="Clear">
         </p>
 
     </form>
