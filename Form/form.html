@@ -1,74 +1,71 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registration Form</title>
-</head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Registration Form</title><style>
+body{
+    font-family: Arial, sans-serif;
+    background-color:#f5f5f5;
+}
 
-<body>
+form{
+    width:500px;
+    margin:auto;
+    background:white;
+    padding:20px;
+    border-radius:6px;
+    box-shadow:0 0 5px rgba(0,0,0,0.1);
+}
 
-    <h1 style="text-align:center;">REGISTRATION FORM</h1>
-    <hr>
+input, select, textarea{
+    width:100%;
+    padding:8px;
+    margin-top:5px;
+}
 
-    <form name="RegForm" method="post">
+button, input[type="submit"], input[type="reset"]{
+    padding:8px 15px;
+    margin-top:10px;
+}
 
-        <p>
-            <label for="name"><b>Name:</b></label><br>
-            <input type="text" id="name" name="Name" size="65" placeholder="Enter your name" required>
-        </p>
-
-        <p>
-            <b>Gender:</b><br>
-            <input type="radio" id="male" name="gender" value="male" required>
-            <label for="male">Male</label>
-
-            <input type="radio" id="female" name="gender" value="female">
-            <label for="female">Female</label>
-        </p>
-
-        <p>
-            <label for="address"><b>Address:</b></label><br>
-            <input type="text" id="address" name="Address" size="65" placeholder="Enter your address" required>
-        </p>
-
-        <p>
-            <label for="email"><b>E-mail Address:</b></label><br>
-            <input type="email" id="email" name="EMail" size="65" placeholder="example@email.com" required>
-        </p>
-
-        <p>
-            <label for="password"><b>Password:</b></label><br>
-            <input type="password" id="password" name="Password" size="65" required>
-        </p>
-
-        <p>
-            <label for="phone"><b>Telephone:</b></label><br>
-            <input type="tel" id="phone" name="Telephone" size="65" placeholder="Enter phone number">
-        </p>
-
-        <p>
-            <label for="course"><b>Select Your Course:</b></label><br>
-            <select id="course" name="Subject" required>
-                <option value="">--Select Course--</option>
-                <option value="BTECH">BTECH</option>
-                <option value="BBA">BBA</option>
-                <option value="BCA">BCA</option>
-                <option value="BCOM">B.COM</option>
-            </select>
-        </p>
-
-        <p>
-            <label for="comment"><b>Comments:</b></label><br>
-            <textarea id="comment" name="Comment" cols="55" rows="4" placeholder="Enter your comments"></textarea>
-        </p>
-
-        <p>
-            <input type="submit" value="Submit">
-            <input type="reset" value="Clear">
-        </p>
-
-    </form>
-
-</body>
+h1{
+    text-align:center;
+}
+</style></head><body><h1>REGISTRATION FORM</h1>
+<hr><form name="RegForm" method="post"><p>
+<label for="name"><b>Name:</b></label>
+<input type="text" id="name" name="Name" placeholder="Enter your name" required>
+</p><p>
+<b>Gender:</b><br>
+<input type="radio" id="male" name="gender" value="male" required>
+<label for="male">Male</label><input type="radio" id="female" name="gender" value="female">
+<label for="female">Female</label>
+</p><p>
+<label for="address"><b>Address:</b></label>
+<textarea id="address" name="Address" rows="3" placeholder="Enter your address" required></textarea>
+</p><p>
+<label for="email"><b>E-mail Address:</b></label>
+<input type="email" id="email" name="EMail" placeholder="example@email.com" required>
+</p><p>
+<label for="password"><b>Password:</b></label>
+<input type="password" id="password" name="Password" required>
+</p><p>
+<label for="phone"><b>Telephone:</b></label>
+<input type="tel" id="phone" name="Telephone" placeholder="Enter phone number">
+</p><p>
+<label for="course"><b>Select Your Course:</b></label>
+<select id="course" name="Subject" required>
+<option value="">--Select Course--</option>
+<option value="BTECH">BTECH</option>
+<option value="BBA">BBA</option>
+<option value="BCA">BCA</option>
+<option value="BCOM">B.COM</option>
+</select>
+</p><p>
+<label for="comment"><b>Comments:</b></label>
+<textarea id="comment" name="Comment" rows="4" placeholder="Enter your comments"></textarea>
+</p><p>
+<input type="submit" value="Submit">
+<input type="reset" value="Clear">
+</p></form></body>
 </html>
