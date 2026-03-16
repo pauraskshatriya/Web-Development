@@ -1,96 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CSS Selectors Demo</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CSS Selectors Demo</title>
 
-    <style>
-        /* Universal Selector */
-        * {
-            margin: 0;
-            padding: 0;
-        }
+<style>
 
-        /* Element Selector */
-        div {
-            padding: 10px;
-            margin: 10px;
-        }
+/* Universal Selector */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
 
-        /* Class Selector */
-        .red {
-            background-color: red;
-            color: white;
-        }
+/* Body styling */
+body{
+    font-family: Arial, sans-serif;
+    margin:20px;
+}
 
-        /* ID Selector */
-        #green {
-            background-color: green;
-            color: white;
-        }
+/* Element Selector */
+div{
+    padding:10px;
+    margin:10px 0;
+}
 
-        /* Child Selector (works now) */
-        div > p {
-            color: blue;
-            background-color: lightgray;
-        }
+/* Class Selector */
+.red{
+    background-color:red;
+    color:white;
+}
 
-        /* Descendant Selector */
-        div article p {
-            color: white;
-            background-color: brown;
-        }
+/* ID Selector */
+#green{
+    background-color:green;
+    color:white;
+}
 
-        /* Pseudo-classes for links */
-        a:link {
-            color: green;
-        }
+/* Child Selector */
+div > p{
+    color:blue;
+    background-color:lightgray;
+    padding:5px;
+}
 
-        a:visited {
-            color: purple;
-        }
+/* Descendant Selector */
+div article p{
+    color:white;
+    background-color:brown;
+    padding:5px;
+}
 
-        a:hover {
-            background-color: yellow;
-        }
+/* Link Pseudo Classes */
+a:link{
+    color:green;
+}
 
-        a:active {
-            background-color: red;
-        }
+a:visited{
+    color:purple;
+}
 
-        /* First-child pseudo selector */
-        p:first-child {
-            background-color: aqua;
-        }
-    </style>
+a:hover{
+    background-color:yellow;
+}
+
+a:active{
+    background-color:red;
+}
+
+/* First Child Selector */
+p:first-child{
+    background-color:aqua;
+}
+
+</style>
 </head>
 
 <body>
 
-    <!-- First-child example -->
-    <main>
-        <p>I am first</p>
-        <p>I am second</p>
-    </main>
+<h2>CSS Selectors Demonstration</h2>
 
-    <!-- Class selector + child selector -->
-    <div class="red">
-        <p>I am a direct child paragraph</p>
+<!-- First-child example -->
+<main>
+    <p>I am first</p>
+    <p>I am second</p>
+</main>
 
-        <article>
-            <p>I am a paragraph inside article</p>
-        </article>
-    </div>
+<!-- Class selector + child selector -->
+<div class="red">
+    <p>I am a direct child paragraph</p>
 
-    <!-- ID selector -->
-    <div id="green">
-        I am another div
-    </div>
+    <article>
+        <p>I am a paragraph inside article</p>
+    </article>
+</div>
 
-    <!-- Link pseudo-classes -->
-    <a href="https://www.google.com">Go to Google</a><br>
-    <a href="https://www.facebook.com">Go to Facebook</a>
+<!-- ID selector -->
+<div id="green">
+    I am another div
+</div>
+
+<br>
+
+<!-- Link pseudo-classes -->
+<a href="https://www.google.com">Go to Google</a><br>
+<a href="https://www.facebook.com">Go to Facebook</a>
 
 </body>
 </html>
