@@ -1,20 +1,26 @@
+// Show alert
 alert("Hello World");
 
-console.log("Code is running...")
-console.log("Code is also running...")
-console.log("Code is looking like a wow...")
+// Logging messages
+console.log("Code is running...");
+console.log("Code is also running...");
+console.log("Code is looking like a wow...");
 
-var a = prompt("Enter your number")
-var isTrue = confirm("Are you sure you want to leave this page and blast your computer ")
+// Take user input
+let number = prompt("Enter your number:");
 
-if(isTrue){
-    console.log("Computer is blasting")
+// Confirm action
+let isConfirmed = confirm("Are you sure you want to leave this page and blast your computer?");
+
+// Condition check
+if (isConfirmed) {
+    console.log("Computer is blasting 💥");
+} else {
+    console.log("Computer is not blasting 🙂");
 }
 
-else{
-    console.log("Computer is not blasting")
+// Display user input
+console.log(`Your number is: ${number}`);
 
-}
-console.log("Your number is " + a)
-
-document.title = "Hey I am good"
+// Change page title
+document.title = "Hey, I am good";
