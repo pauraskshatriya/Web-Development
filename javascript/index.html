@@ -3,14 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JavaScript Introduction</title>
+    <title>JavaScript Demo</title>
 </head>
-<body>
-   <div class="box">
-        Hey I am a Box
-   </div>
-   <button>Submit</button>
 
-<script src="script.js"></script>
+<body>
+
+    <h1 style="text-align: center;">JavaScript Demo Page</h1>
+
+    <!-- Button to trigger JS manually -->
+    <div style="text-align: center;">
+        <button onclick="runCode()">Run Script</button>
+    </div>
+
+    <script>
+        function runCode() {
+            alert("Hello World");
+
+            console.log("Code is running...");
+            console.log("Code is also running...");
+            console.log("Code is looking like a wow...");
+
+            let number = prompt("Enter your number:");
+            let isConfirmed = confirm("Are you sure you want to leave this page and blast your computer?");
+
+            if (isConfirmed) {
+                console.log("Computer is blasting 💥");
+            } else {
+                console.log("Computer is not blasting 🙂");
+            }
+
+            console.log(`Your number is: ${number}`);
+            document.title = "Hey, I am good";
+        }
+    </script>
+
 </body>
 </html>
