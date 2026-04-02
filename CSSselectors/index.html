@@ -4,81 +4,108 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CSS Selectors</title>
+
     <style>
-        /* Element Selector  */
-        div{
-            /* background-color: red; */
-        }
-
-        /* Class Selector  */
-        .red{
-            background-color: red;
-        }
-
-        /* Id Selector */
-        #green{
-            background-color: green;
-        }
-
-        /* Child Selectors  */
-        div > p {
-            color: blue;
-            background-color: brown;
-        }
-
-        /* Descendant Selector  */
-        div p {
-            color: blue;
-            background-color: brown;
-        }
-
         /* Universal Selector */
         * {
-            margin:0;
+            margin: 0;
             padding: 0;
+            box-sizing: border-box;
         }
 
-        /* Pseudo Selector  */
-        a:visited{
-            color: yellow
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            line-height: 1.6;
         }
 
+        /* Element Selector */
+        div {
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 6px;
+        }
+
+        /* Class Selector */
+        .red {
+            background-color: #ff4d4d;
+            color: white;
+        }
+
+        /* ID Selector */
+        #green {
+            background-color: #28a745;
+            color: white;
+        }
+
+        /* Child Selector */
+        div > p {
+            color: white;
+            background-color: brown;
+            padding: 5px;
+        }
+
+        /* Descendant Selector */
+        div p {
+            border: 2px dashed black;
+        }
+
+        /* Pseudo Selectors */
         a:link {
             color: green;
         }
 
-        a:active{
-            background-color: red;
+        a:visited {
+            color: purple;
         }
 
-        a:hover{
+        a:hover {
             background-color: yellow;
         }
 
+        a:active {
+            background-color: red;
+            color: white;
+        }
 
-        p:first-child{
+        /* First child selector */
+        p:first-child {
             background-color: aqua;
+            padding: 5px;
+        }
+
+        /* Section styling */
+        main {
+            margin-bottom: 20px;
         }
 
     </style>
 </head>
+
 <body>
+
+    <h2>CSS Selectors Demonstration</h2>
+
     <main class="one">
-        <p>I am first</p>
+        <p>I am first (first-child selector)</p>
         <p>I am second</p>
     </main>
-    <div class="red">
-        I am a div
-        <article>
 
-            <p>I am a para inside div</p>
+    <div class="red">
+        I am a div with class "red"
+        <article>
+            <p>I am a paragraph inside div (child & descendant selector)</p>
         </article>
     </div>
 
     <div id="green">
-        I am another div
+        I am another div with id "green"
     </div>
-    <a href="https://www.google.com">Go to Google</a>
-    <a href="https://www.facebook2.com">Go to Facebook</a>
+
+    <p>
+        <a href="https://www.google.com">Go to Google</a><br>
+        <a href="https://www.facebook.com">Go to Facebook</a>
+    </p>
+
 </body>
 </html>
