@@ -6,22 +6,38 @@
 <title>CSS Transitions</title>
 
 <style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 .container {
     background-color: antiquewhite;
     width: 50vw;
     height: 40vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .box {
     background-color: aquamarine;
     width: 5vw;
     height: 4vh;
-    transition: all 3s cubic-bezier(0.09, 0.5, 0, 0.99) 1s;
+    transition: transform 3s cubic-bezier(0.09, 0.5, 0, 0.99) 1s,
+                background-color 1s ease;
+    will-change: transform;
 }
 
 .translate {
-    transform: translateX(10vw) translateY(10vh) scale(2);
+    transform: translate(10vw, 10vh) scale(2);
     background-color: blue;
+}
+
+/* Optional: trigger on hover also */
+.container:hover .box {
+    opacity: 0.9;
 }
 </style>
 </head>
@@ -33,7 +49,8 @@
 
 <script>
 window.addEventListener("load", () => {
-    document.getElementById("box").classList.add("translate");
+    const box = document.getElementById("box");
+    box.classList.add("translate");
 });
 </script>
 </body>
