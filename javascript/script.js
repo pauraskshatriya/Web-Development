@@ -1,26 +1,34 @@
-// Show alert
-alert("Hello World");
+// Attach event instead of inline onclick
+document.getElementById("runBtn").addEventListener("click", runCode);
 
-// Logging messages
-console.log("Code is running...");
-console.log("Code is also running...");
-console.log("Code is looking like a wow...");
+function runCode() {
+    alert("Hello World");
 
-// Take user input
-let number = prompt("Enter your number:");
+    console.log("Code is running...");
+    console.log("Still running...");
+    console.log("Everything looks good!");
 
-// Confirm action
-let isConfirmed = confirm("Are you sure you want to leave this page and blast your computer?");
+    // Trim input and handle cancel case
+    let number = prompt("Enter your number:");
+    if (number !== null) {
+        number = number.trim();
+    }
 
-// Condition check
-if (isConfirmed) {
-    console.log("Computer is blasting 💥");
-} else {
-    console.log("Computer is not blasting 🙂");
+    let isConfirmed = confirm("Are you sure you want to proceed?");
+
+    if (isConfirmed) {
+        console.log("Action confirmed 🚀");
+    } else {
+        console.log("Action cancelled 🙂");
+    }
+
+    // Handle empty or cancelled input
+    if (number) {
+        console.log(`Your number is: ${number}`);
+    } else {
+        console.log("No valid number entered.");
+    }
+
+    // Slightly more dynamic title
+    document.title = "Script Executed ✔";
 }
-
-// Display user input
-console.log(`Your number is: ${number}`);
-
-// Change page title
-document.title = "Hey, I am good";
