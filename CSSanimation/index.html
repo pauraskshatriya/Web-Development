@@ -1,20 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Animation Demo</title>
+
     <style>
-        .box {
-            height: 121px;
-            width: 121px;
-            background-color: red;
-            border-radius: 70px;
-            position: absolute;
-            bottom: 0;
-            left: 0;   
-            animation: animateX 3s linear infinite, animateY 1s ease-out infinite alternate;
+        body {
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #111;
         }
 
         .container {
@@ -22,38 +20,45 @@
             height: 80vh;
             width: 80vw;
             background-color: blue;
+            overflow: hidden; /* prevents overflow */
+            border-radius: 10px;
+        }
+
+        .box {
+            height: 80px;
+            width: 80px;
+            background-color: red;
+            border-radius: 50%;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            animation: animateX 4s linear infinite,
+                       animateY 1.2s ease-in-out infinite alternate;
         }
 
         @keyframes animateX {
-            from{
+            from {
                 left: 0;
             }
-            to{
-                left: 100%;
+            to {
+                left: calc(100% - 80px); /* prevents overflow */
             }
         }
 
         @keyframes animateY {
-           from{
+            from {
                 bottom: 0;
             }
-            to{
-                bottom: 100% ;
+            to {
+                bottom: calc(100% - 80px); /* prevents overflow */
             }
         }
- 
     </style>
 </head>
 
 <body>
     <div class="container">
-
-        <div class="box">
-        </div>
+        <div class="box"></div>
     </div>
-    <!-- 
-   
-     -->
 </body>
-
 </html>
