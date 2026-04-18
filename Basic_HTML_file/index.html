@@ -3,9 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>This is a basic website</title>
+    <title>My First Website</title>
+    <style>
+        body {
+            font-family: system-ui, -apple-system, sans-serif;
+            display: grid;
+            place-content: center;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+        h1 {
+            font-size: 3rem;
+            animation: fadeIn 1.5s ease-in;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
 </head>
 <body>
-    Hello World!!
+    <main>
+        <h1>Hello World!!</h1>
+    </main>
 </body>
 </html>
