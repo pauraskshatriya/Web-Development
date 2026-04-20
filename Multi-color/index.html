@@ -1,22 +1,29 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Multicolor CSS Variables</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CSS Variable Theme Switcher</title>
   <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
   <div class="container">
-    <h1>CSS Variable Color Switcher</h1>
-    <p>Click a button to change the theme.</p>
+    <h1>Theme Switcher</h1>
+    <p>Select a theme to change colors instantly.</p>
 
     <div class="buttons">
-      <button onclick="setTheme('blue')">Blue</button>
-      <button onclick="setTheme('purple')">Purple</button>
-      <button onclick="setTheme('green')">Green</button>
-      <button onclick="setTheme('sunset')">Sunset</button>
+      <button type="button" aria-label="Blue Theme" onclick="setTheme('blue')">Blue</button>
+      <button type="button" aria-label="Purple Theme" onclick="setTheme('purple')">Purple</button>
+      <button type="button" aria-label="Green Theme" onclick="setTheme('green')">Green</button>
+      <button type="button" aria-label="Sunset Theme" onclick="setTheme('sunset')">Sunset</button>
     </div>
   </div>
+
+  <noscript>
+    <p style="text-align:center;">JavaScript is required for theme switching.</p>
+  </noscript>
 
   <script src="script.js"></script>
 </body>
