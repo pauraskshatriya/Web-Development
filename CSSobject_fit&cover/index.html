@@ -4,28 +4,42 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Object Fit Refined</title>
+
   <style>
     :root {
       --container-width: 466px;
+      --radius: 10px;
+    }
+
+    body {
+      margin: 0;
+      padding: 20px;
+      font-family: system-ui, sans-serif;
+      background: #fafafa;
+      display: flex;
+      justify-content: center;
     }
 
     .container {
-      max-width: var(--container-width);
-      width: 100%;
-      /* Calculated aspect ratio based on 466x488 */
-      aspect-ratio: 466 / 488; 
-      border: 2px solid #222;
-      border-radius: 8px;
-      overflow: hidden; /* Ensures image respects border radius */
-      background-color: #f0f0f0; /* Placeholder color while loading */
+      width: min(100%, var(--container-width));
+      aspect-ratio: 466 / 488;
+      border-radius: var(--radius);
+      overflow: hidden;
+      background-color: #eaeaea;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     }
 
     .container img {
-      display: block;
       width: 100%;
       height: 100%;
       object-fit: cover;
       object-position: center;
+      display: block;
+      transition: transform 0.3s ease;
+    }
+
+    .container:hover img {
+      transform: scale(1.05);
     }
   </style>
 </head>
@@ -33,9 +47,11 @@
 
   <div class="container">
     <img 
-      src="https://us.123rf.com/450wm/progressman/progressman1909/progressman190900115/130695651-woman-in-black-coat-walking-along-the-sea.jpg?ver=6" 
-      alt="Woman in a black coat walking along the shoreline"
-      loading="lazy">
+      src="https://us.123rf.com/450wm/progressman/progressman1909/progressman190900115/130695651-woman-in-black-coat-walking-along-the-sea.jpg?ver=6"
+      alt="Woman walking along the shoreline"
+      loading="lazy"
+      decoding="async"
+      fetchpriority="low">
   </div>
 
 </body>
