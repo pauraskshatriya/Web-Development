@@ -16,46 +16,58 @@
 
 /* Body styling */
 body{
-    font-family: Arial, sans-serif;
+    font-family: 'Segoe UI', Tahoma, sans-serif;
     text-align:center;
     padding:20px;
-    background: #f5f7fa;
+    background: linear-gradient(135deg, #eef2f7, #dbe6f6);
 }
 
 /* Heading */
 h2{
     margin-bottom:10px;
-    color:#333;
+    color:#222;
+    letter-spacing:0.5px;
 }
 
-/* Container for images */
+/* Subtext */
+p{
+    color:#555;
+}
+
+/* Container */
 .container{
     display:flex;
     justify-content:center;
-    flex-wrap:wrap; /* responsive */
-    gap:20px;
-    padding:20px;
+    flex-wrap:wrap;
+    gap:25px;
+    padding:25px;
 }
 
-/* Image card */
+/* Card */
 .card{
     text-align:center;
+    transition:transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Card hover lift */
+.card:hover{
+    transform:translateY(-8px);
 }
 
 /* Image styling */
 img{
     width:280px;
-    height:auto;
-    border-radius:10px;
-    box-shadow:0 4px 12px rgba(0,0,0,0.2);
-    transition:all 0.3s ease;
+    border-radius:12px;
+    box-shadow:0 6px 18px rgba(0,0,0,0.15);
+    transition:all 0.4s ease;
 }
 
 /* Caption */
 .caption{
-    margin-top:8px;
+    margin-top:10px;
     font-size:14px;
-    color:#555;
+    color:#444;
+    font-weight:500;
 }
 
 /* Filters */
@@ -74,10 +86,10 @@ img{
 /* Hover effect */
 img:hover{
     filter:none;
-    transform:scale(1.05); /* zoom effect */
+    transform:scale(1.06);
 }
 
-/* Mobile optimization */
+/* Mobile */
 @media (max-width: 768px){
     img{
         width:90%;
