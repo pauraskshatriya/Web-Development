@@ -1,5 +1,8 @@
 console.log("FOR LOOP");
 
-for (let i = 1; i <= 5; i++) {
-    console.log(i);
+const start = 1;
+const end = 5;
+
+for (let i = start; i <= end; i++) {
+    console.log(`Count: ${i}`);
 }
