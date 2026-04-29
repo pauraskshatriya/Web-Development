@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,8 +15,8 @@
 
 .container {
     background-color: antiquewhite;
-    width: 50vw;
-    height: 40vh;
+    width: 100vw; /* better responsiveness */
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -23,21 +24,33 @@
 
 .box {
     background-color: aquamarine;
-    width: 5vw;
-    height: 4vh;
-    transition: transform 3s cubic-bezier(0.09, 0.5, 0, 0.99) 1s,
-                background-color 1s ease;
+    width: 60px;   /* fixed size avoids weird scaling on small screens */
+    height: 60px;
+    border-radius: 8px;
+    
+    transition: transform 1.5s cubic-bezier(0.25, 0.8, 0.25, 1),
+                background-color 0.8s ease,
+                opacity 0.3s ease;
+
     will-change: transform;
 }
 
+/* animation state */
 .translate {
-    transform: translate(10vw, 10vh) scale(2);
+    transform: translate(150px, 150px) scale(1.8);
     background-color: blue;
 }
 
-/* Optional: trigger on hover also */
+/* hover enhancement */
 .container:hover .box {
-    opacity: 0.9;
+    opacity: 0.85;
+}
+
+/* accessibility: reduce motion */
+@media (prefers-reduced-motion: reduce) {
+    .box {
+        transition: none;
+    }
 }
 </style>
 </head>
@@ -50,7 +63,11 @@
 <script>
 window.addEventListener("load", () => {
     const box = document.getElementById("box");
-    box.classList.add("translate");
+    
+    // small delay ensures smoother initial render
+    setTimeout(() => {
+        box.classList.add("translate");
+    }, 100);
 });
 </script>
 </body>
