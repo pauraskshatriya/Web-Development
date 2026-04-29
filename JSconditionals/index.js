@@ -1,23 +1,26 @@
-console.log("Hello I am conditional tutorial");
+console.log("Conditional Demo");
 
-let age = 1;
+// Use meaningful variable names
+const age = 1;
 
-if (age === 18) {
+// Group edge cases first
+if (age <= 0) {
+    console.log("Invalid age entered");
+} 
+else if (age < 18) {
+    console.log("You cannot drive");
+} 
+else if (age === 18) {
     console.log("You can drive");
 } 
-else if (age === 0) {
-    console.log("Are you kidding?");
-} 
-else if (age === 1) {
-    console.log("Are you again kidding?");
-} 
 else {
-    console.log("You cannot drive");
+    console.log("You are allowed to drive");
 }
 
-let a = 6;
-let b = 8;
+// Cleaner difference calculation using Math.abs
+const a = 6;
+const b = 8;
 
-let c = a > b ? (a - b) : (b - a);
+const difference = Math.abs(a - b);
 
-console.log("The difference is:", c);
+console.log(`The difference between ${a} and ${b} is: ${difference}`);
