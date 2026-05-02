@@ -1,29 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CSS Lists</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Lists Demo</title>
+
     <style>
-        nav ul li{
-            list-style: devanagari;
-            list-style-type: "🔥";
-            background-color: yellow;
-            list-style-position: inside;
-            border: 2px solid black;
-            list-style: disc inside url("https://user-images.githubusercontent.com/14011726/94132137-7d4fc100-fe7c-11ea-8512-69f90cb65e48.gif"); 
-            list-style-image: url("https://user-images.githubusercontent.com/14011726/94132137-7d4fc100-fe7c-11ea-8512-69f90cb65e48.gif");
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
- 
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 30px;
+            color: #333;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        nav {
+            max-width: 400px;
+            margin: auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        nav ul {
+            padding-left: 0;
+        }
+
+        nav ul li {
+            margin: 12px 0;
+            padding: 12px;
+
+            /* List Styling */
+            list-style: disc inside;
+            list-style-type: "🔥 ";
+            list-style-position: inside;
+
+            /* Optional Image Marker */
+            list-style-image: url("https://user-images.githubusercontent.com/14011726/94132137-7d4fc100-fe7c-11ea-8512-69f90cb65e48.gif");
+
+            background-color: #ffe066;
+            border: 2px solid black;
+            border-radius: 6px;
+
+            transition: 0.3s ease;
+        }
+
+        nav ul li:hover {
+            background-color: #ffd43b;
+            transform: translateX(5px);
+            cursor: pointer;
+        }
     </style>
 </head>
+
 <body>
+
+    <h2>CSS List Styling Demonstration</h2>
+
     <nav>
         <ul>
             <li>Home</li>
             <li>About</li>
+            <li>Services</li>
             <li>Contact</li>
         </ul>
     </nav>
+
 </body>
 </html>
