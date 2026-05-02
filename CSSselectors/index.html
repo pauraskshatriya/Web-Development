@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CSS Selectors</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Selectors Demo</title>
 
     <style>
         /* Universal Selector */
@@ -15,15 +15,23 @@
 
         body {
             font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
             padding: 20px;
             line-height: 1.6;
+            color: #333;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #222;
         }
 
         /* Element Selector */
         div {
-            padding: 10px;
-            margin: 10px 0;
-            border-radius: 6px;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 8px;
         }
 
         /* Class Selector */
@@ -43,6 +51,7 @@
             color: white;
             background-color: brown;
             padding: 5px;
+            border-radius: 4px;
         }
 
         /* Descendant Selector */
@@ -61,6 +70,9 @@
 
         a:hover {
             background-color: yellow;
+            color: black;
+            padding: 2px 4px;
+            border-radius: 4px;
         }
 
         a:active {
@@ -68,17 +80,33 @@
             color: white;
         }
 
-        /* First child selector */
+        /* First-child Selector */
         p:first-child {
             background-color: aqua;
             padding: 5px;
+            border-radius: 4px;
         }
 
-        /* Section styling */
+        /* Section Styling */
         main {
+            background-color: white;
+            padding: 15px;
+            border-radius: 8px;
             margin-bottom: 20px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
         }
 
+        article {
+            margin-top: 10px;
+        }
+
+        .links {
+            margin-top: 20px;
+            background-color: white;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        }
     </style>
 </head>
 
@@ -87,14 +115,15 @@
     <h2>CSS Selectors Demonstration</h2>
 
     <main class="one">
-        <p>I am first (first-child selector)</p>
-        <p>I am second</p>
+        <p>I am the first paragraph (first-child selector)</p>
+        <p>I am the second paragraph</p>
     </main>
 
     <div class="red">
         I am a div with class "red"
+
         <article>
-            <p>I am a paragraph inside div (child & descendant selector)</p>
+            <p>I am a paragraph inside article inside div</p>
         </article>
     </div>
 
@@ -102,10 +131,19 @@
         I am another div with id "green"
     </div>
 
-    <p>
-        <a href="https://www.google.com">Go to Google</a><br>
-        <a href="https://www.facebook.com">Go to Facebook</a>
-    </p>
+    <section class="links">
+        <p><strong>Useful Links:</strong></p>
+
+        <a href="https://www.google.com" target="_blank">
+            Go to Google
+        </a>
+
+        <br><br>
+
+        <a href="https://www.facebook.com" target="_blank">
+            Go to Facebook
+        </a>
+    </section>
 
 </body>
 </html>
