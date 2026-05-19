@@ -3,7 +3,7 @@ console.log("Conditional Demo");
 // Use meaningful variable names
 const age = 1;
 
-// Group edge cases first
+// Combine edge cases for brevity
 if (age <= 0) {
     console.log("Invalid age entered");
 } 
@@ -23,4 +23,4 @@ const b = 8;
 
 const difference = Math.abs(a - b);
 
-console.log(`The difference between ${a} and ${b} is: ${difference}`);
+console.log(`The difference between ${a} and ${b} is: ${difference}`);   
